@@ -126,6 +126,10 @@ public class SwipeLayout extends FrameLayout {
         void onHandRelease(SwipeLayout layout, float xvel, float yvel);
     }
 
+    public boolean hasSwipeListeners(){
+        return mSwipeListeners.isEmpty();
+    }
+
     public void addSwipeListener(SwipeListener l) {
         mSwipeListeners.add(l);
     }
@@ -134,7 +138,7 @@ public class SwipeLayout extends FrameLayout {
         mSwipeListeners.remove(l);
     }
 
-    public void removeAllSwipeListener() {
+    public void removeAllSwipeListeners() {
         mSwipeListeners.clear();
     }
 
