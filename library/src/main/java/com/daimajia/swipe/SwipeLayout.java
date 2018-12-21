@@ -23,6 +23,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -139,7 +140,12 @@ public class SwipeLayout extends FrameLayout {
     }
 
     public void removeAllSwipeListeners() {
-        mSwipeListeners.clear();
+        Iterator<SwipeListener> iterator = mSwipeListeners.iterator();
+        while(iterator.hasNext()) {
+            SwipeListener swipeListener = iterator.next();
+            if (swipeListener instanceof InternalSwipeListener) continue;
+            iterator.remove();
+        }
     }
 
     public interface SwipeDenier {

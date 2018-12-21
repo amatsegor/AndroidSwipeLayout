@@ -2,6 +2,7 @@ package com.daimajia.swipe.implments;
 
 import android.view.View;
 
+import com.daimajia.swipe.InternalSwipeListener;
 import com.daimajia.swipe.SimpleSwipeListener;
 import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.interfaces.SwipeAdapterInterface;
@@ -173,7 +174,7 @@ public class SwipeItemMangerImpl implements SwipeItemMangerInterface {
 
     }
 
-    class SwipeMemory extends SimpleSwipeListener {
+    class SwipeMemory extends InternalSwipeListener {
 
         private int position;
 
